@@ -1,10 +1,15 @@
 const User = require('../models/user');
 const { generateToken } = require('../middleware/jwt');
+const sha1 = require('sha1');
+
+function hashString(password) {
+  return sha1(password);
+}
 
 const login = async (request, response) => {
   try {
     const { email, password } = request.body;
-    const user = await User.authenticate(email, password);
+    const user = await User.authenticate(email, hashString(password));
     if (user) {
       response.status(200).json({
         _id: user._id,
@@ -30,7 +35,7 @@ const register = async (request, response) => {
     await (new User({
       name: request.body.name,
       lastname: request.body.lastname,
-      password: request.body.password,
+      password: hashString(request.body.password),
       email: request.body.email,
     })).save();
     response.status(204).send();
