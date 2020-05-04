@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const routes = require('./routes');
 const config = require('./config');
 
-const app = express();
+const app = module.exports = express();
 app.use(express.static(__dirname + '/public'));
 
 app.use(morgan('dev'));
