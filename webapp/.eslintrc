@@ -48,7 +48,8 @@
       {
         "devDependencies": [
           "internals/**",
-          "**/*.spec.js"
+          "**/*.spec.js",
+          "**/*.test.js"
         ]
       }
     ],
