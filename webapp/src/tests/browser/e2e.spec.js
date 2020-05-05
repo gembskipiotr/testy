@@ -566,10 +566,6 @@ describe('Join company', () => {
     await page.click(".MuiButtonBase-root.MuiButton-root.MuiButton-contained.sc-bZQynM.sc-hEsumM.czOACi.MuiButton-containedPrimary");
     await page.click(".MuiButtonBase-root.MuiButton-root.MuiButton-contained.sc-bZQynM.sc-hEsumM.czOACi.MuiButton-containedPrimary");
     await page.click(".MuiButtonBase-root.MuiButton-root.MuiButton-contained.sc-bZQynM.sc-hEsumM.czOACi.MuiButton-containedPrimary");
-    const accept = await page.$x("//button");
-
-    await page.waitFor(5000);
-    await accept[3].click();
 
     await page.waitFor(5000);
 

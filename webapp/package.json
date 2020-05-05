@@ -69,7 +69,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest -- /src/tests/browser/",
     "eject": "react-scripts eject",
     "extract-intl": "react-scripts extractIntl en pl",
     "lint": "yarn run lint:js && yarn run lint:css",
